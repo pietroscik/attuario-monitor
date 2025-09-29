@@ -1,0 +1,8 @@
+{
+  "name": "attuario-monitor-secure2",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "playwright": "^1.39.0"
+  }
+}

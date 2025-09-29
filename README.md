@@ -1,16 +1,15 @@
-## Hi there 👋
+# Attuario Monitor (Secure Version 2)
 
-<!--
-**pietroscik/pietroscik** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+Questa versione mostra lo **stato globale** online/offline.
 
-Here are some ideas to get you started:
+## Endpoint
+- `api/monitor` → protetto da token (`x-monitor-token`). Restituisce dettagli.  
+- `api/public` → calcola lo stato globale (se almeno un check fallisce → offline).
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+## Configurazione
+1. Su Vercel → Settings → Environment Variables aggiungi:
+   - `MONITOR_TOKEN` con un valore segreto.
+
+2. Per UptimeRobot → imposta header `x-monitor-token` con il tuo token e punta a `api/monitor`.
+
+3. La pagina `/status.html` mostra solo 🟢 ONLINE o 🔴 OFFLINE.

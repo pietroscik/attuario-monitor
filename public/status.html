@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Status Attuario</title>
+  <style>
+    body { font-family: sans-serif; margin: 2rem; }
+    .ok { color: green; }
+    .fail { color: red; }
+  </style>
+</head>
+<body>
+  <h1>Status Monitor (Pubblico)</h1>
+  <p>Questa pagina mostra lo stato globale (online/offline).</p>
+  <div id="status">Caricamento…</div>
+  <script>
+    async function load() {
+      const resp = await fetch('/api/public');
+      const data = await resp.json();
+      const statusDiv = document.getElementById('status');
+      if (data.status === 'online') {
+        statusDiv.innerHTML = '<span class="ok">🟢 ONLINE</span>';
+      } else {
+        statusDiv.innerHTML = '<span class="fail">🔴 OFFLINE</span>';
+      }
+    }
+    load();
+  </script>
+</body>
+</html>
