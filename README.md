@@ -1,15 +1,32 @@
-# Attuario Monitor (Secure Version 2)
+# Pietro Scik · Portfolio & Monitor
 
-Questa versione mostra lo **stato globale** online/offline.
+Questa repo ospita due elementi:
 
-## Endpoint
-- `api/monitor` → protetto da token (`x-monitor-token`). Restituisce dettagli.  
-- `api/public` → calcola lo stato globale (se almeno un check fallisce → offline).
+- una landing page statica pubblicata da `/public/index.html` con le informazioni essenziali sul profilo professionale;
+- il monitor pubblico raggiungibile da `/public/status.html`, che continua a leggere gli endpoint esposti nella cartella `api/`.
 
-## Configurazione
-1. Su Vercel → Settings → Environment Variables aggiungi:
-   - `MONITOR_TOKEN` con un valore segreto.
+## Struttura
 
-2. Per UptimeRobot → imposta header `x-monitor-token` con il tuo token e punta a `api/monitor`.
+```
+public/
+├── index.html   → landing page
+├── status.html  → monitor pubblico
+└── styles.css   → stile condiviso della landing page
+api/             → funzioni serverless per il monitor
+```
 
-3. La pagina `/status.html` mostra solo 🟢 ONLINE o 🔴 OFFLINE.
+## Sviluppo
+
+Serve qualsiasi static file server. Con [Vercel](https://vercel.com/) o un'altra piattaforma, punta la directory `public/` come output. In locale puoi usare, ad esempio:
+
+```bash
+npx serve public
+```
+
+La pagina principale include un link costante a `status.html` per mantenere il monitor accessibile.
+
+## Configurazione monitor
+
+Le funzioni in `api/` leggono la variabile `MONITOR_TOKEN`. Su Vercel aggiungila nelle Environment Variables e passala come header `x-monitor-token` quando interroghi `/api/monitor`.
+
+L'endpoint `/api/public` resta pensato per la pagina di stato e restituisce solo lo stato complessivo.
