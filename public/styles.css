@@ -202,6 +202,48 @@ img {
   box-shadow: 0 20px 40px rgba(15, 23, 42, 0.3);
 }
 
+.project-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.project-card p {
+  margin: 0;
+  color: var(--color-text-muted);
+}
+
+.project-card .inline-link {
+  margin-top: auto;
+}
+
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.tag-list li {
+  padding: 0.35rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  background: rgba(15, 23, 42, 0.45);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.projects-note {
+  margin-top: 2.5rem;
+  color: var(--color-text-muted);
+  max-width: 620px;
+}
+
 .card h3,
 .testimonial blockquote {
   margin-top: 0;
