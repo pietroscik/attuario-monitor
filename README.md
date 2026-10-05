@@ -1,5 +1,7 @@
 # Attuario Monitor (Secure Version 2)
 
+> 📚 **Stato**: Configurazione del profilo GitHub — non un progetto autonomo.
+
 Questa versione mostra lo **stato globale** online/offline.
 
 ## Endpoint
