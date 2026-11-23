@@ -1,3 +1,5 @@
+> **Disclaimer**: This repository is an independent quantitative R&D prototype. It does not constitute a statutory actuarial valuation, regulatory advice, or a certified Solvency II/IFRS 17 model. — *Gli strumenti qui pubblicati sono prototipi di ricerca quantitativa indipendente: non costituiscono valutazioni attuariali ai fini di legge, pareri regolatori né modelli certificati Solvency II/IFRS 17.*
+
 # Attuario Monitor (Secure Version 2)
 
 > 📚 **Stato**: Configurazione del profilo GitHub — non un progetto autonomo.
